@@ -46,12 +46,19 @@ cv2.destroyAllWindows()
 
 from tkinter.filedialog import  asksaveasfilename
 import cv2
+web = cv2.VideoCapture(0)
+import time
+while True:
+    ref, img = web.read()
+    cv2.imshow('image', img)
+    if cv2.waitKey(True) == ord('q'):  # wait for q char
+        file_path = asksaveasfilename()  # pop-up where file saved
+        cv2.imwrite(file_path, img)
+        time.sleep(2)
+        break
 
-file_path = asksaveasfilename()
-
-print(file_path)
-
-
+web.release()  # release the webcam object
+cv2.destroyAllWindows()
 
 
 
