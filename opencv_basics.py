@@ -41,6 +41,16 @@ while True:
 web.release()  # release the webcam object
 cv2.destroyAllWindows()
 
+# task 4
+# save image file with browse manual path
+
+from tkinter.filedialog import  asksaveasfilename
+import cv2
+
+file_path = asksaveasfilename()
+
+print(file_path)
+
 
 
 
