@@ -1,3 +1,4 @@
+# task 1
 # capture pic from webcam
 import cv2
 
@@ -8,6 +9,24 @@ cv2.imshow('image', img)  # figure title is image and img is the image in rgb fo
 
 cv2.waitKey(False)  # hold the image figure until user press any key from user
 cv2.destroyAllWindows()
+
+# task 2
+# capture image after preview
+
+import cv2
+web = cv2.VideoCapture(0)
+
+while 1:
+    ref, img = web.read()
+    cv2.imshow('image', img)
+    if cv2.waitKey(True) == ord('q'):  # wait for q char
+        break
+
+web.release()  # release the webcam object
+cv2.destroyAllWindows()
+
+
+
 
 
 
